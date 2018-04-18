@@ -34,7 +34,7 @@ void whats_at(node_t *head, int value){
 	}
 
 	if(current->next == NULL && i != value){
-		printf("Index %d is not in the list, list is of length %d", value, i); 
+		printf("Index %d is not in the list, list is of length %d", value, i+1); 
 	} else {
 		printf("Value at LinkedList[%d]: %d", value, current->val);
 	}	
