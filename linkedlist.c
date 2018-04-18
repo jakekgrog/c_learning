@@ -25,6 +25,21 @@ void insert(node_t *head, int value){
 	current->next->next = NULL;
 }
 
+void whats_at(node_t *head, int value){
+	node_t *current = head;
+	int i = 0;
+	while(current->next != NULL && i != value){
+		current = current->next;
+		i++;
+	}
+
+	if(current->next == NULL && i != value){
+		printf("Index %d is not in the list, list is of length %d", value, i); 
+	} else {
+		printf("Value at LinkedList[%d]: %d", value, current->val);
+	}	
+}
+
 void rem(node_t *head){
 	node_t *current = head;
         while(current->next->next != NULL){
@@ -46,12 +61,13 @@ int main() {
 	
 	printf("%s", "\n");
 
-	print_list(test_list);
+	whats_at(test_list, 1);
 
-	rem(test_list);
-	
+        printf("%s", "\n");
+
+	whats_at(test_list, 3);
+
 	printf("%s", "\n");
 
-	print_list(test_list);
 	return 0;
 }
